@@ -21,6 +21,7 @@ class MovieViewController: UIViewController,AnyView,UITableViewDelegate,UITableV
     var presenter: AnyPresenter?
     var moviesList: SearchMovie?
     
+    
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -52,6 +53,10 @@ class MovieViewController: UIViewController,AnyView,UITableViewDelegate,UITableV
         let takeMovies = moviesList?.Search[indexPath.row]
         cell.textLabel?.text = takeMovies?.title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     func update(with movies: SearchMovie) {
